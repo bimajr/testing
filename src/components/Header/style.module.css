@@ -4,6 +4,7 @@
   padding: 1rem;
   background-color: #ad0707;
   color: white;
+  position: relative;
 }
 
 .container > img {
@@ -12,4 +13,28 @@
 
 .container > h1 {
   font-weight: 500;
+}
+
+.logoutButton {
+  background-color: white;
+  color: #ad0707;
+  border: none;
+  border-radius: 5px;
+  padding: 10px 15px;
+  cursor: pointer;
+  transition: background-color 0.3s ease, color 0.3s ease;
+  position: absolute;
+  right: 1rem;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.logoutButton:hover {
+  background-color: #f0f0f0;
+  color: #ad0707;
+}
+
+.logoutButton:focus {
+  outline: none;
+  box-shadow: 0 0 5px rgba(255, 255, 255, 0.5);
 }
