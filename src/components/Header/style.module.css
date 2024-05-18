@@ -1,6 +1,7 @@
 .container {
   display: flex;
   align-items: center;
+  justify-content: space-between;
   padding: 1rem;
   background-color: #ad0707;
   color: white;
@@ -13,6 +14,14 @@
 
 .container > h1 {
   font-weight: 500;
+  position: relative;
+  right: 100px;
+  top: 7px;
+}
+
+.actions {
+  display: flex;
+  align-items: center;
 }
 
 .logoutButton {
@@ -23,18 +32,41 @@
   padding: 10px 15px;
   cursor: pointer;
   transition: background-color 0.3s ease, color 0.3s ease;
-  position: absolute;
-  right: 1rem;
-  top: 50%;
-  transform: translateY(-50%);
 }
 
 .logoutButton:hover {
   background-color: #f0f0f0;
-  color: #ad0707;
 }
 
 .logoutButton:focus {
   outline: none;
   box-shadow: 0 0 5px rgba(255, 255, 255, 0.5);
+}
+
+.genreContainer {
+  display: flex;
+}
+
+.genreButton {
+  background-color: transparent;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  position: relative;
+  right: 100px;
+  top: 7px;
+  margin-right: 0.5rem;
+  padding: 5px 10px;
+  cursor: pointer;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.genreButton:hover {
+  background-color: rgba(255, 255, 255, 0.39);
+  color: #f5f0f0;
+}
+
+.selected {
+  background-color: rgba(255, 255, 255);
+  color: #ad0707;
 }

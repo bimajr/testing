@@ -25,7 +25,7 @@
 }
 
 .confirmButton {
-  background-color: #ff4b5c;
+  background-color: #db0606;
   color: white;
   border: none;
   border-radius: 5px;
@@ -35,7 +35,7 @@
 }
 
 .confirmButton:hover {
-  background-color: #ff1e33;
+  background-color: #8a0202;
 }
 
 .cancelButton {

@@ -6,6 +6,8 @@ const Search = ({ setMovies, setLoading }) => {
   const [input, setInput] = useState("");
 
   const handleClick = (keyword) => {
+    if (!keyword.trim()) return;
+
     setLoading(true);
     getMovies(keyword).then((res) => {
       if (res.data.Response === "False") {
@@ -25,7 +27,11 @@ const Search = ({ setMovies, setLoading }) => {
         type="search"
         onChange={(e) => setInput(e.target.value)}
       />
-      <button type="button" onClick={() => handleClick(input)}>
+      <button
+        type="button"
+        onClick={() => handleClick(input)}
+        disabled={!input.trim()}
+      >
         Search
       </button>
     </div>

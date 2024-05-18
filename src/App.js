@@ -13,12 +13,15 @@ const App = () => {
   const [loading, setLoading] = useState(false);
   const [isLoggedIn, setIsLoggedIn] = useState(false);
   const [showLogoutConfirm, setShowLogoutConfirm] = useState(false);
+  const [selectedGenre, setSelectedGenre] = useState("");
 
   useEffect(() => {
     if (isLoggedIn) {
-      getMovies("man").then((res) => setMovies(res.data.Search));
+      getMovies(selectedGenre || "man").then((res) =>
+        setMovies(res.data.Search)
+      );
     }
-  }, [isLoggedIn]);
+  }, [isLoggedIn, selectedGenre]);
 
   const handleLogout = () => {
     setShowLogoutConfirm(true);
@@ -34,13 +37,22 @@ const App = () => {
     setShowLogoutConfirm(false);
   };
 
+  const handleGenreSelect = (genre) => {
+    setSelectedGenre(genre);
+  };
+
   if (!isLoggedIn) {
     return <Login onLogin={setIsLoggedIn} />;
   }
 
   return (
     <div className="app_container">
-      <Header title="Movie Red" logo={logo} onLogout={handleLogout} />
+      <Header
+        title="Movie Red"
+        logo={logo}
+        onLogout={handleLogout}
+        onGenreSelect={handleGenreSelect}
+      />
       <Search setMovies={setMovies} setLoading={setLoading} />
       <Movie movies={movies} loading={loading} />
       <hr />
